@@ -49,5 +49,10 @@ public class Attendance extends JFrame implements ActionListener {
     // Add action listeners
     add.addActionListener(this);
     done.addActionListener(this);
+    
+    // Center panel components
+    list.setAlignmentX(CENTER_ALIGNMENT);
+    add.setAlignmentX(CENTER_ALIGNMENT);
+    done.setAlignmentX(CENTER_ALIGNMENT);
   }
 }
