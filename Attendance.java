@@ -61,6 +61,9 @@ public class Attendance extends JFrame implements ActionListener {
     // Set the tab size
     list.setTabSize(4);
     
+    // Remove focus
+    list.setFocusable(false);
+    
     // Create file
     try {
       // Choose directory where file will be saved
