@@ -73,4 +73,29 @@ public class Attendance extends JFrame implements ActionListener {
       e.printStackTrace();
     }
   }
+  
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    action = e.getActionCommand();
+    
+    if("Add".equals(action)) {
+      // Create new window
+      info = new JPanel(new BorderLayout(5, 5));
+      
+      // Add labels
+      labels = new JPanel(new GridLayout(0, 1, 2, 2));
+      labels.add(new JLabel("Name", SwingConstants.RIGHT));
+      labels.add(new JLabel("Email", SwingConstants.RIGHT));
+      info.add(labels, BorderLayout.WEST);
+      
+      // Add text fields
+      fields = new JPanel(new GridLayout(0, 1, 2, 2));
+      name = new JTextField();
+      email = new JTextField();
+      name.addAncestorListener(new RequestFocusListener(false));
+      fields.add(name);
+      fields.add(email);
+      info.add(fields, BorderLayout.CENTER);
+    }
+  }
 }
