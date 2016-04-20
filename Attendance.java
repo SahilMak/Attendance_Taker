@@ -54,5 +54,20 @@ public class Attendance extends JFrame implements ActionListener {
     list.setAlignmentX(CENTER_ALIGNMENT);
     add.setAlignmentX(CENTER_ALIGNMENT);
     done.setAlignmentX(CENTER_ALIGNMENT);
+    
+    // Prompt for date
+    date = (String) JOptionPane.showInputDialog(null, "Enter today's date", "Date", JOptionPane.INFORMATION_MESSAGE, null, null, "mm_dd_yy");
+    
+    // Set the tab size
+    list.setTabSize(4);
+    
+    // Create file
+    try {
+      // Choose directory where file will be saved
+      output = new PrintWriter("C:" + File.separator + "Users" + File.separator + "Name" + File.separator +
+      "Downloads" + File.separator + "Attendance" + date + ".txt");
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
   }
 }
