@@ -111,4 +111,41 @@ public class Attendance extends JFrame implements ActionListener {
       this.dispose();
     }
   }
+  
+  class RequestFocusListener implements AncestorListener {
+    private boolean removeListener;
+    
+    /**
+     * Constructor
+     */
+     
+     public RequestFocusListener() {
+       this(true);
+     }
+     
+     /**
+      * Constructor
+      */
+    
+    public RequestFocusListener(boolean removeListener) {
+      this.removeListener = removeListener;
+    }
+    
+    @Override
+    public void ancestorAdded(AncestorEvent arg0) {
+      JComponent component = arg0.getComponent();
+      component.requestFocusInWindow();
+      
+      if (removeListener)
+        component.removeAncestorLstener(this);
+    }
+    
+    @Override
+    public void ancestorMoved(AncestorEvent arg0) {
+    }
+    
+    @Override
+    public void ancestorRemoved(AncestorEvent arg0) {
+    }
+  }
 }
