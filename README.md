@@ -1,2 +1,2 @@
 # Attendance_Taker
-A Java GUI that adds to my contribution activity, making my GitHub look better.
+A Java GUI that collects and displays names and email addresses, and stores them in a text file.
