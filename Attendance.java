@@ -96,6 +96,19 @@ public class Attendance extends JFrame implements ActionListener {
       fields.add(name);
       fields.add(email);
       info.add(fields, BorderLayout.CENTER);
+      
+      // Display the window
+      JOptionPane.showMessageDialog(this, info, "Enter Info", JOptionPane.QUESTION_MESSAGE);
+      
+      // Print to file
+      output.println(name.getText() + "\t\t" + email.getText());
+      
+      // Display in text field
+      list.append("\t\t\t\t\t\t" + name.getText() + "\t\t" + email.getText() + "\n");
+    }
+    else if("Done".equals(action)) {
+      output.close();
+      this.dispose();
     }
   }
 }
